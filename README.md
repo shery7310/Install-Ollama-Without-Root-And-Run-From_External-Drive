@@ -75,7 +75,7 @@ Ensure that you use correct paths.
 
 Then register your model using:
 
-<pre>/path/to/ollama create DeepSeek-Coder-V2-Lite-Base.Q8_0 -f Modelfile<pre>
+<pre>/path/to/ollama create DeepSeek-Coder-V2-Lite-Base.Q8_0 -f Modelfile</pre>
 
 Again make sure to use correct path
 
@@ -103,11 +103,11 @@ Just type:
 
 This will list two ollama related processes, for example:
 
-```bash
+<pre>
 ❯ ps aux | grep ollama
 cdev       35097  0.0  0.7 7009596 113248 pts/3  Sl   19:34   0:04 /run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve
-cdev       37664  0.0  0.0   6720  4152 pts/3    S+   23:46   0:00 grep --color=auto ollama
-```
+cdev       37664  0.0  0.0   6720  4152 pts/3    S+   23:46   0:00 grep --color=auto ollama</pre>
+
 
 Just see the process number in grep column and type:
 
