@@ -23,29 +23,29 @@ Also `~/modelfiles` is created for model definitions, in the home directory.
 
 ### Clone this repo using:
 
-`git clone https://github.com/shery7310/Install-Ollama-Without-Root-And-Run-From_External-Drive.git`
+<pre>git clone https://github.com/shery7310/Install-Ollama-Without-Root-And-Run-From_External-Drive.git</pre>
 
 Then open that directory in terminal and then make install.sh executable using:
 
-`chmod +x install.sh`
+<pre>chmod +x install.sh</pre>
 
-Then run `./install.sh`
+Then run <pre>./install.sh</pre>
 
 ### Running Ollama Without Root Access
 
 Make sure the drive is mounted and then run:
 
-`/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve &`
+<pre>/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve &</pre>
 
 Replace the path with your username and the name of the drive where you created the directory structure
 
 ### Make sure to move any GGUF model to this directory:
 
-`/run/media/your-username/your-drive-name/local-models/gguf`
+<pre>/run/media/your-username/your-drive-name/local-models/gguf</pre>
 
 ### Then create a model file to create and run blob and manifest files for the Model:
 
-`mkdir -p ~/modelfiles/mymodel`
+<pre>mkdir -p ~/modelfiles/mymodel</pre>
 
 Here `mymodel` is the name of the model we are going to run for example:
 
@@ -53,29 +53,29 @@ DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf
 
 Then we will run:
 
-`mkdir -p ~/modelfiles/DeepSeek-Coder
+<pre>mkdir -p ~/modelfiles/DeepSeek-Coder</pre>
 
 You can give Modelfile any name you like
 
 Then cd into the directory we created using:
 
-`cd DeepSeek-Coder`
+<pre>cd DeepSeek-Coder</pre>
 
 Then run:
 
-`nano Modelfile`
+<pre>nano Modelfile</pre>
 
 and write this to the nano file:
 
-`FROM /run/media/your-username/your-drive-name/local-models/gguf/DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf`
+<pre>FROM /run/media/your-username/your-drive-name/local-models/gguf/DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf</pre>
 
 Then press ctrl + x and then type y and press Enter, changes to the nano file will be saved
 
-This must be the correct path of the gguf file
+Ensure that you use correct paths.
 
 Then register your model using:
 
-`/path/to/ollama create DeepSeek-Coder-V2-Lite-Base.Q8_0 -f Modelfile`
+<pre>/path/to/ollama create DeepSeek-Coder-V2-Lite-Base.Q8_0 -f Modelfile<pre>
 
 Again make sure to use correct path
 
@@ -83,7 +83,7 @@ Again make sure to use correct path
 
 Then from within the same directory run:
 
-path/to/ollama/local-models/ollama/bin/bin/ollama create DeepSeek-Coder -f Modelfile
+<pre>path/to/ollama/local-models/ollama/bin/bin/ollama create DeepSeek-Coder -f Modelfile</pre>
 
 This uses the Modelfile to create required files to run the model and this might take some Time.
 
@@ -93,11 +93,13 @@ For example in my case I ran:
 
 Then run the model using:
 
-`/path/to/ollama/local-models/ollama/bin/bin/ollama run DeepSeek-Coder`
+<pre>/path/to/ollama/local-models/ollama/bin/bin/ollama run DeepSeek-Coder</pre>
 
 ### Stopping Ollama Service:
 
-Just type `ps aux | grep ollama`
+Just type:
+
+<pre>ps aux | grep ollama</pre>
 
 This will list two ollama related processes, for example:
 
@@ -109,7 +111,7 @@ cdev       37664  0.0  0.0   6720  4152 pts/3    S+   23:46   0:00 grep --color=
 
 Just see the process number in grep column and type:
 
-`kill process number`
+<pre>kill process number</pre>
 
 i.e. 
 
