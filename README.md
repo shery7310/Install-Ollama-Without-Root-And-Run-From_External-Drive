@@ -1,4 +1,4 @@
-# Installing Ollama to run without Root Privileges and Running GGUF Models From External Drive
+# Running GGUF Models locally and without Root Privileges (Linux)
 
 This script lets you run Ollama from an external or secondary drive without needing root access. It builds on the approach shared in this  <a href="https://github.com/zherenz/Ollama-installation-without-root-privilege/tree/main?tab=readme-ov-file">repository</a> by [zherenz](https://github.com/zherenz) and offers a more flexible, user-controlled setup. In contrast, the official script at ollama.com/install.sh installs Ollama system-wide, requires sudo or root privileges, creates a dedicated system user (ollama), and sets up a systemd service—all within root-owned directories.
 
@@ -26,6 +26,7 @@ Also `~/modelfiles` is created for model definitions, in the home directory.
 `git clone https://github.com/shery7310/Install-Ollama-Without-Root-And-Run-From_External-Drive.git`
 
 Then open that directory in terminal and then make install.sh executable using:
+
 `chmod +x install.sh`
 
 Then run `./install.sh`
@@ -34,9 +35,9 @@ Then run `./install.sh`
 
 Make sure the drive is mounted and then run:
 
-`/path/to/ollama/local-models/ollama/bin/bin/ollama serve &`
+`/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve &`
 
-Replace the parameters wiht your username and the name of the drive where you created the directory structure
+Replace the path with your username and the name of the drive where you created the directory structure
 
 ### Make sure to move any GGUF model to this directory:
 
@@ -46,7 +47,7 @@ Replace the parameters wiht your username and the name of the drive where you cr
 
 `mkdir -p ~/modelfiles/mymodel`
 
-Here my model is the name of the model for example:
+Here `mymodel` is the name of the model we are going to run for example:
 
 DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf
 
@@ -64,9 +65,11 @@ Then run:
 
 `nano Modelfile`
 
-and write this to the file:
+and write this to the nano file:
 
 `FROM /run/media/your-username/your-drive-name/local-models/gguf/DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf`
+
+Then press ctrl + x and then type y and press Enter, changes to the nano file will be saved
 
 This must be the correct path of the gguf file
 
@@ -91,3 +94,24 @@ For example in my case I ran:
 Then run the model using:
 
 `/path/to/ollama/local-models/ollama/bin/bin/ollama run DeepSeek-Coder`
+
+### Stopping Ollama Service:
+
+Just type `ps aux | grep ollama`
+
+This will list two ollama related processes, for example:
+
+```bash
+❯ ps aux | grep ollama
+cdev       35097  0.0  0.7 7009596 113248 pts/3  Sl   19:34   0:04 /run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve
+cdev       37664  0.0  0.0   6720  4152 pts/3    S+   23:46   0:00 grep --color=auto ollama
+```
+
+Just see the process number in grep column and type:
+
+`kill process number`
+
+i.e. 
+
+kill 35097
+kill 37664
