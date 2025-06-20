@@ -10,14 +10,14 @@ Basically this setup will run locally but we will be storing gguf files, blob an
 
 ### What will be the folder structure on the external/other drive:
 
-```bash
+<pre>
 /run/media/username/your-drive-name/
 ├── local-models/
 │   ├── gguf/        ← for your .gguf model files
 │   └── ollama/
 │       ├── bin/     ← Ollama binary
 │       └── models/  ← blobs + manifests (OLLAMA_MODELS)
-```
+</pre>
 
 Also `~/modelfiles` is created for model definitions, in the home directory.
 
