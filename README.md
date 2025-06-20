@@ -30,7 +30,7 @@ Then open that directory in terminal and then make install.sh executable using:
 
 Then run `./install.sh`
 
-### Running Model Without Root Access
+### Running Ollama Without Root Access
 
 Make sure the drive is mounted and then run:
 
