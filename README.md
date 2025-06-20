@@ -52,11 +52,13 @@ DeepSeek-Coder-V2-Lite-Base.Q8_0.gguf
 
 Then we will run:
 
-`mkdir -p ~/modelfiles/DeepSeek-Coder-V2-Lite-Base.Q8_0`
+`mkdir -p ~/modelfiles/DeepSeek-Coder
+
+You can give Modelfile any name you like
 
 Then cd into the directory we created using:
 
-`cd mymodel`
+`cd DeepSeek-Coder`
 
 Then run:
 
@@ -76,11 +78,16 @@ Again make sure to use correct path
 
 ### Running The Model:
 
-`/path/to/ollama run DeepSeek-Coder-V2-Lite-Base.Q8_0`
+Then from within the same directory run:
+
+path/to/ollama/local-models/ollama/bin/bin/ollama create DeepSeek-Coder -f Modelfile
+
+This uses the Modelfile to create required files to run the model and this might take some Time.
 
 For example in my case I ran:
 
-`/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama run llama3.2`
+`/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama create llama3.2 -f Modelfile`
 
+Then run the model using:
 
-
+`/path/to/ollama/local-models/ollama/bin/bin/ollama run DeepSeek-Coder`
