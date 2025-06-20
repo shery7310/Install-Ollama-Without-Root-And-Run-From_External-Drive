@@ -1,0 +1,1 @@
+# Install-Ollama-Without-Root-And-Run-From_External-Drive
