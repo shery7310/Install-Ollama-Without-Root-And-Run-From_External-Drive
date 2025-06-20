@@ -34,7 +34,7 @@ Then run `./install.sh`
 
 Make sure the drive is mounted and then run:
 
-`/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve &`
+`/path/to/ollama/local-models/ollama/bin/bin/ollama serve &`
 
 Replace the parameters wiht your username and the name of the drive where you created the directory structure
 
