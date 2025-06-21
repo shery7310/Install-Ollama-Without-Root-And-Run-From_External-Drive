@@ -35,13 +35,15 @@ Then run <pre>./install.sh</pre>
 
 Make sure the drive is mounted and then run:
 
-<pre>/run/media/cdev/data-storage/local-models/ollama/bin/bin/ollama serve &</pre>
+<pre>/mounted-drive/local-models/ollama/bin/bin/ollama serve &</pre>
 
 Replace the path with your username and the name of the drive where you created the directory structure
 
 ### Make sure to move any GGUF model to this directory:
 
 <pre>/run/media/your-username/your-drive-name/local-models/gguf</pre>
+
+This can be different for different linux distributions
 
 ### Then create a model file to create and run blob and manifest files for the Model:
 
