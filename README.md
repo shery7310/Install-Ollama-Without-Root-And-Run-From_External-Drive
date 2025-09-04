@@ -113,9 +113,9 @@ cdev       37664  0.0  0.0   6720  4152 pts/3    S+   23:46   0:00 grep --color=
 
 Just see the process number in grep column and type:
 
-<pre>kill process number</pre>
+<pre>kill -9 process number</pre>
 
 i.e. 
 
-kill 35097
-kill 37664
+kill -9 35097
+kill -9 37664
